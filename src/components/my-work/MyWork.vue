@@ -2,6 +2,17 @@
 import { ref, type Ref } from 'vue'
 import AppLink from '@/components/AppLink.vue'
 
+import { useIntersectionObserver } from '@vueuse/core'
+
+const imagevw: Ref<HTMLElement | null> = ref(null)
+const isImageVW = ref(false)
+
+useIntersectionObserver(imagevw, ([entry]) => {
+  if (entry.isIntersecting) {
+    isImageVW.value = true
+  }
+})
+
 interface Props {
   image: string
   title: string
@@ -62,7 +73,12 @@ const myWorkImg: Ref<Array<Props>> = ref([
       <!--      images-->
       <section class="grid grid-cols-2 gap-4 mt-5">
         <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
-          <img :alt="mywork.title" :src="mywork.image" class="group-hover:blur-[4px]" />
+          <img
+            ref="imagevw"
+            :alt="mywork.title"
+            :src="mywork.image"
+            class="group-hover:blur-[4px]"
+          />
           <AppLink
             :to="mywork.path"
             class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
