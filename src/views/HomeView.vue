@@ -57,11 +57,12 @@ const socailIcon: Ref<Array<string>> = ref([
             </button>
           </div>
           <div>
-            <button
-              class="border border-[#EDEDED] rounded-full px-6 py-4 font-switzer-regular text-lg"
+            <AppLink
+              class="text-[#090909]/50 border border-[#EDEDED] hover:bg-[#F2F2F2] transition-all duration-500 rounded-full px-6 py-4 font-switzer-regular text-lg"
+              to="/about"
             >
-              <AppLink class="text-[#090909]/50" to=""> About me </AppLink>
-            </button>
+              About me
+            </AppLink>
           </div>
         </div>
         <!--      buttons-->
