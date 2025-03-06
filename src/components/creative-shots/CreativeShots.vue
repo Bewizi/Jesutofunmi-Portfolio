@@ -26,7 +26,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
   <section class="container max-w-7xl mx-auto px-5 lg:px-2 mt-40">
     <section class="text-start">
       <!--      main header-->
-      <section class="mb-10 flex items-center justify-between">
+      <section class="mb-20 flex items-center justify-between">
         <div>
           <h1 class="font-switzer-md text-4xl text-[#0C0C0C] mb-5">Creative Shots</h1>
           <p class="text-[#484848] font-switzer-regular text-xl leading-normal">
@@ -38,18 +38,19 @@ const myWorkImg: Ref<Array<Props>> = ref([
 
         <!--        button-->
         <div>
-          <button
-            class="border border-[#EDEDED] rounded-full px-6 py-4 font-switzer-regular text-lg"
+          <AppLink
+            class="text-[#090909]/50 border border-[#EDEDED] hover:bg-[#F2F2F2] transition-all duration-500 rounded-full px-6 py-4 font-switzer-regular text-lg"
+            to=""
           >
-            <AppLink class="text-[#090909]/50" to=""> Show More </AppLink>
-          </button>
+            Show more
+          </AppLink>
         </div>
         <!--        button-->
       </section>
       <!--      main header-->
 
       <!--      images-->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <figure v-for="(mywork, index) in myWorkImg" :key="index">
           <img :alt="mywork.mainHeader" :src="mywork.image" />
           <figcaption>
