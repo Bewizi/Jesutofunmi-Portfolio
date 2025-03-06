@@ -2,17 +2,6 @@
 import { ref, type Ref } from 'vue'
 import AppLink from '@/components/AppLink.vue'
 
-import { useIntersectionObserver } from '@vueuse/core'
-
-const imagevw: Ref<HTMLElement | null> = ref(null)
-const isImageVW = ref(false)
-
-useIntersectionObserver(imagevw, ([entry]) => {
-  if (entry.isIntersecting) {
-    isImageVW.value = true
-  }
-})
-
 interface Props {
   image: string
   title: string
