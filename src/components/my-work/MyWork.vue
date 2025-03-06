@@ -1,27 +1,47 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue'
+import AppLink from '@/components/AppLink.vue'
 
 interface Props {
   image: string
   title: string
+  mainHeader: string
+  subText: string
+  path: string
 }
 
 const myWorkImg: Ref<Array<Props>> = ref([
   {
     image: '/image/Astradrop.png',
     title: 'Astradrop',
+    mainHeader: 'Astradrop',
+    subText:
+      "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
+    path: 'about',
   },
   {
     image: '/image/Wakala.png',
     title: 'Wakala',
+    mainHeader: 'WakalaPay',
+    subText:
+      'WakalaPay: Bridging the Crypto Gap. Explore how I designed a seamless crypto conversion app, solving real-world problems in the Web3 space',
+    path: 'about',
   },
   {
     image: '/image/Barca-Edtech.png',
     title: 'Barca-Edtech',
+    mainHeader: 'Barca EdTech',
+    subText:
+      "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
+    path: 'about',
   },
   {
     image: '/image/Eco-Eat.png',
     title: 'Eco-Eat',
+    mainHeader: 'EcoEat',
+    subText:
+      'Effortless Local Food Delivery. I crafted intuitive user flows and tailored design elements to deliver a seamless food ordering experience.',
+    path: 'about',
   },
 ])
 </script>
@@ -41,8 +61,15 @@ const myWorkImg: Ref<Array<Props>> = ref([
 
       <!--      images-->
       <section class="grid grid-cols-2 gap-4 mt-5">
-        <figure v-for="(mywork, index) in myWorkImg" :key="index">
-          <img :alt="mywork.title" :src="mywork.image" />
+        <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
+          <img :alt="mywork.title" :src="mywork.image" class="group-hover:blur-[4px]" />
+          <AppLink
+            :to="mywork.path"
+            class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+          >
+            <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
+            <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
+          </AppLink>
         </figure>
       </section>
       <!--      images-->
