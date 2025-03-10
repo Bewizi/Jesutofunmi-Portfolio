@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue'
-import AppLink from '@/components/AppLink.vue'
 
 interface Props {
   image: string
@@ -38,12 +37,11 @@ const myWorkImg: Ref<Array<Props>> = ref([
 
         <!--        button-->
         <div>
-          <AppLink
+          <button
             class="text-[#090909]/50 border border-[#EDEDED] hover:bg-[#F2F2F2] transition-all duration-500 rounded-full px-6 py-4 font-switzer-regular text-lg"
-            to=""
           >
-            Show more
-          </AppLink>
+            <a href="https://www.instagram.com/benditodsg/" target="_blank"> Show more </a>
+          </button>
         </div>
         <!--        button-->
       </section>
