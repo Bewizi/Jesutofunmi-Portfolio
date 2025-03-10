@@ -59,7 +59,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
       <!--      main header-->
 
       <!--      images-->
-      <section class="grid grid-cols-2 gap-4 mt-5">
+      <section class="grid grid-cols-2 gap-8 mt-5">
         <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
           <img
             ref="imagevw"
