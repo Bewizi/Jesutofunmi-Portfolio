@@ -68,12 +68,14 @@ import { Icon } from '@iconify/vue'
 
       <section class="grid place-items-center text-start">
         <p class="leading-normal text-[#484848] mt-3 text-4xl font-switzer-md">
-          I believe a seamless
-          <strong class="text-[#8631F4] underline"> user experience </strong> <br />
-          turns visitors into
-          <strong class="text-[#EABD09] underline"> Users </strong>
-          and users <br />
-          into <strong class="text-[#3A86FF] underline"> Loyal Customers </strong>
+          I believe <strong class="text-[#A363F6]"> great design </strong> isn’t just about look,
+          <br />
+          it’s about <strong class="text-[#FDCA00]"> creating experiences </strong> that
+          <strong class="text-[#2196F3]">
+            guide, <br />
+            engage
+          </strong>
+          , and <strong class="text-[#2196F3]">convert effortlessly</strong> .
         </p>
       </section>
 
