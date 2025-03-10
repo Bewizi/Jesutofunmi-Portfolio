@@ -5,6 +5,7 @@ interface Props {
   image: string
   mainHeader: string
   subHeader: string
+  link?: string
 }
 
 const myWorkImg: Ref<Array<Props>> = ref([
@@ -12,11 +13,13 @@ const myWorkImg: Ref<Array<Props>> = ref([
     image: '/image/NGO.png',
     mainHeader: 'NGO Design',
     subHeader: 'UI Design for NGO',
+    link: 'https://www.instagram.com/benditodsg/p/DCn2PX_iLHj/?img_index=1',
   },
   {
     image: '/image/Fintech-Dashboard.png',
     mainHeader: 'Fintech Dashboard',
     subHeader: 'Bank Dashboard',
+    link: 'https://www.instagram.com/benditodsg/p/DCkHL29CknT/',
   },
 ])
 </script>
@@ -50,7 +53,9 @@ const myWorkImg: Ref<Array<Props>> = ref([
       <!--      images-->
       <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <figure v-for="(mywork, index) in myWorkImg" :key="index">
-          <img :alt="mywork.mainHeader" :src="mywork.image" />
+          <a :href="mywork.link" target="_blank">
+            <img :alt="mywork.mainHeader" :src="mywork.image" />
+          </a>
           <figcaption class="mt-5">
             <p class="text-[#484848] font-switzer-regular text-lg mb-2.5">
               {{ mywork.mainHeader }}
