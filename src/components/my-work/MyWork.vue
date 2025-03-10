@@ -50,7 +50,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
   <section id="project" class="container max-w-7xl mx-auto px-5 lg:px-2 mt-40">
     <section class="grid place-items-center text-center">
       <!--      main header-->
-      <div>
+      <div class="mb-14">
         <h1 class="font-switzer-md text-4xl text-[#0C0C0C] mb-5">Explore My Works</h1>
         <p class="text-[#484848] font-switzer-md text-xl leading-normal">
           Step into My Design Journey: Discover how I solve problems through <br />
@@ -66,7 +66,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
             ref="imagevw"
             :alt="mywork.title"
             :src="mywork.image"
-            class="group-hover:blur-[4px]"
+            class="group-hover:blur-[4px] group-hover:brightness-75 transition-all duration-500 ease-in-out"
           />
           <AppLink
             :to="mywork.path"
