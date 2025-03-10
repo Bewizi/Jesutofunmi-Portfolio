@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue'
-import AppLink from '@/components/AppLink.vue'
 
 interface Props {
   image: string
@@ -17,7 +16,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
     mainHeader: 'Astradrop',
     subText:
       "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
-    path: 'about',
+    path: 'https://astradrop.com/',
   },
   {
     image: '/image/Wakala.png',
@@ -25,7 +24,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
     mainHeader: 'WakalaPay',
     subText:
       'WakalaPay: Bridging the Crypto Gap. Explore how I designed a seamless crypto conversion app, solving real-world problems in the Web3 space',
-    path: 'about',
+    path: '',
   },
   {
     image: '/image/Barca-Edtech.png',
@@ -33,7 +32,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
     mainHeader: 'Barca EdTech',
     subText:
       "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
-    path: 'about',
+    path: '',
   },
   {
     image: '/image/Eco-Eat.png',
@@ -41,7 +40,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
     mainHeader: 'EcoEat',
     subText:
       'Effortless Local Food Delivery. I crafted intuitive user flows and tailored design elements to deliver a seamless food ordering experience.',
-    path: 'about',
+    path: '',
   },
 ])
 </script>
@@ -68,13 +67,14 @@ const myWorkImg: Ref<Array<Props>> = ref([
             :src="mywork.image"
             class="group-hover:blur-[4px] group-hover:brightness-75 transition-all duration-500 ease-in-out"
           />
-          <AppLink
-            :to="mywork.path"
+          <a
+            :href="mywork.path"
             class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+            target="_blank"
           >
             <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
             <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
-          </AppLink>
+          </a>
         </figure>
       </section>
       <!--      images-->
