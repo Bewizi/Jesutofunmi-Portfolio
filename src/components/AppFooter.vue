@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-import { Icon } from '@iconify/vue'
-import { ref, type Ref } from 'vue'
-
-const socailIcon: Ref<Array<string>> = ref([
-  'uil:behance',
-  'pajamas:twitter',
-  'uil:dribbble',
-  'uil:instagram',
-])
+import SocialIcons from '@/components/social-icons/SocialIcons.vue'
 </script>
 
 <template>
@@ -21,22 +13,14 @@ const socailIcon: Ref<Array<string>> = ref([
         <p class="font-switzer-regular text-2xl">
           <span> Have a project in mind? </span>
           <button class="btn text-white rounded-full px-6 py-4 font-switzer-regular text-lg">
-            Contact Me 📩
+            <a href="https://mail.google.com/mail/u/1/#inbox?compose=new" target="_blank">
+              Contact Me 📩
+            </a>
           </button>
         </p>
 
         <!--        social icons-->
-        <div class="flex items-center gap-4">
-          <template v-for="(icon, index) in socailIcon" :key="index">
-            <Icon
-              :icon="icon"
-              class="bg-[#F2F2F2] p-2 rounded-full"
-              color="#191919"
-              height="40"
-              width="40"
-            />
-          </template>
-        </div>
+        <SocialIcons />
         <!--        social icons-->
       </div>
     </section>
