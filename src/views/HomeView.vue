@@ -5,11 +5,28 @@ import { ref, type Ref } from 'vue'
 import MyWork from '@/components/my-work/MyWork.vue'
 import CreativeShots from '@/components/creative-shots/CreativeShots.vue'
 
-const socailIcon: Ref<Array<string>> = ref([
-  'uil:behance',
-  'pajamas:twitter',
-  'uil:dribbble',
-  'uil:instagram',
+interface IconProps {
+  icon: string
+  link?: string
+}
+
+const socailIcon: Ref<Array<IconProps>> = ref([
+  {
+    icon: 'uil:behance',
+    link: 'https://www.behance.net/oluwalajesutof',
+  },
+  {
+    icon: 'pajamas:twitter',
+    link: 'https://x.com/OluwaladeJesut1?t=a2IkmNn7P9iD59nbOhTs0g&s=09',
+  },
+  {
+    icon: 'uil:dribbble',
+    link: 'https://dribbble.com/Bendito',
+  },
+  {
+    icon: 'uil:instagram',
+    link: 'https://www.instagram.com/benditodsg/',
+  },
 ])
 </script>
 
@@ -20,15 +37,17 @@ const socailIcon: Ref<Array<string>> = ref([
       <section class="grid place-items-center text-center">
         <!--        social icons-->
         <div class="flex items-center justify-center gap-4">
-          <template v-for="(icon, index) in socailIcon" :key="index">
-            <Icon
-              :icon="icon"
-              class="bg-[#F2F2F2] p-2 rounded-full"
-              color="#191919"
-              height="40"
-              width="40"
-            />
-          </template>
+          <section v-for="(icons, index) in socailIcon" :key="index">
+            <a :href="icons.link" target="_blank">
+              <Icon
+                :icon="icons.icon"
+                class="bg-[#F2F2F2] p-2 rounded-full"
+                color="#191919"
+                height="40"
+                width="40"
+              />
+            </a>
+          </section>
         </div>
         <!--        social icons-->
         <h2 class="font-switzer-sm-bold text-6xl leading-normal">
@@ -47,13 +66,19 @@ const socailIcon: Ref<Array<string>> = ref([
             <button
               class="btn text-white rounded-full px-6 py-4 font-switzer-regular text-lg flex items-center gap-2"
             >
-              Hire me
-              <Icon
-                color="white"
-                height="24"
-                icon="qlementine-icons:arrow-up-right-24"
-                width="24"
-              />
+              <a
+                class="flex items-center gap-2"
+                href="https://mail.google.com/mail/u/1/#inbox?compose=new"
+                target="_blank"
+              >
+                Hire me
+                <Icon
+                  color="white"
+                  height="24"
+                  icon="qlementine-icons:arrow-up-right-24"
+                  width="24"
+                />
+              </a>
             </button>
           </div>
           <div>
