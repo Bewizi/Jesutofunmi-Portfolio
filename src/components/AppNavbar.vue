@@ -54,7 +54,12 @@ import JesutofunmiPng from '@/assets/image/Jesutofunmi.jpg'
         </ul>
         <div>
           <button class="btn text-white rounded-full px-6 py-2 font-switzer-md text-xl">
-            View Resume
+            <a
+              href="https://drive.google.com/file/d/1XA87USe3lxBhAE6Lu17rQHrZ3Lo-u5ZM/view?usp=drivesdk"
+              target="_blank"
+            >
+              View Resume
+            </a>
           </button>
         </div>
       </nav>
