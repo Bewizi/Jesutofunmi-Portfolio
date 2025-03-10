@@ -26,7 +26,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
   <section class="container max-w-7xl mx-auto px-5 lg:px-2 mt-40">
     <section class="text-start">
       <!--      main header-->
-      <section class="mb-20 flex items-center justify-between">
+      <section class="mb-14 flex items-center justify-between">
         <div>
           <h1 class="font-switzer-md text-4xl text-[#0C0C0C] mb-5">Creative Shots</h1>
           <p class="text-[#484848] font-switzer-regular text-xl leading-normal">
@@ -53,8 +53,10 @@ const myWorkImg: Ref<Array<Props>> = ref([
       <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <figure v-for="(mywork, index) in myWorkImg" :key="index">
           <img :alt="mywork.mainHeader" :src="mywork.image" />
-          <figcaption>
-            <p class="text-[#484848] font-switzer-regular text-lg">{{ mywork.mainHeader }}</p>
+          <figcaption class="mt-5">
+            <p class="text-[#484848] font-switzer-regular text-lg mb-2.5">
+              {{ mywork.mainHeader }}
+            </p>
             <h2 class="font-switzer-md text-2xl text-[#0C0C0C]">{{ mywork.subHeader }}</h2>
           </figcaption>
         </figure>
