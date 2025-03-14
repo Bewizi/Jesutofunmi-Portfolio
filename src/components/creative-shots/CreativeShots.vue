@@ -25,7 +25,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
 </script>
 
 <template>
-  <section class="container max-w-7xl mx-auto px-5 lg:px-2 mt-40">
+  <section class="container max-w-7xl mx-auto px-5 lg:px-8 mt-40">
     <section class="text-start">
       <!--      main header-->
       <section class="mb-14 flex items-center justify-between">
