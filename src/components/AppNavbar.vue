@@ -3,7 +3,7 @@ import Link from '@/components/AppLink.vue'
 import JesutofunmiPng from '@/assets/image/Jesutofunmi.jpg'
 </script>
 <template>
-  <section class="container max-w-7xl mx-auto py-5 px-5 lg:px-2">
+  <section class="container max-w-7xl mx-auto py-5 px-5 lg:px-8">
     <header class="flex items-center justify-between">
       <Link to="/">
         <div class="flex items-center gap-2">
