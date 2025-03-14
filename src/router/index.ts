@@ -15,6 +15,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import('../views/AboutView.vue'),
   },
+  {
+    path: '/astradrop',
+    name: 'astradrop',
+    component: () => import('../views/AstradropView.vue'),
+  },
 ]
 
 const router = createRouter({
