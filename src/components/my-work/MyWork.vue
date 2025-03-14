@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue'
+import AppLink from '@/components/AppLink.vue'
 
 interface Props {
   image: string
@@ -16,7 +17,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
     mainHeader: 'Astradrop',
     subText:
       "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
-    path: 'https://astradrop.com/',
+    path: '/astradrop',
   },
   {
     image: '/image/Wakala.png',
@@ -67,14 +68,13 @@ const myWorkImg: Ref<Array<Props>> = ref([
             :src="mywork.image"
             class="group-hover:blur-[4px] group-hover:brightness-75 transition-all duration-500 ease-in-out"
           />
-          <a
-            :href="mywork.path"
+          <AppLink
+            :to="mywork.path"
             class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
-            target="_blank"
           >
             <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
             <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
-          </a>
+          </AppLink>
         </figure>
       </section>
       <!--      images-->
