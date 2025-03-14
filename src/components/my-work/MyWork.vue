@@ -46,7 +46,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
 </script>
 
 <template>
-  <section id="project" class="container max-w-7xl mx-auto px-5 lg:px-2 mt-40">
+  <section id="project" class="container max-w-7xl mx-auto px-5 lg:px-8 mt-40">
     <section class="grid place-items-center text-center">
       <!--      main header-->
       <div class="mb-14">
