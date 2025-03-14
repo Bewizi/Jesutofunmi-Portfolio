@@ -9,7 +9,7 @@ import SocialIcons from '@/components/social-icons/SocialIcons.vue'
 <template>
   <main class="mt-20">
     <!--    Hero section-->
-    <section class="container max-w-7xl mx-auto px-5 lg:px-2">
+    <section class="container max-w-7xl mx-auto px-5 lg:px-8">
       <section class="grid place-items-center text-center">
         <!--        social icons-->
         <SocialIcons />
@@ -62,7 +62,7 @@ import SocialIcons from '@/components/social-icons/SocialIcons.vue'
 
     <!--    My Quote-->
     <section class="bg-[#F9F9F9] p-5 mt-40 h-screen">
-      <section class="container max-w-7xl mx-auto px-5 lg:px-2 mt-20">
+      <section class="container max-w-7xl mx-auto px-5 lg:px-8 mt-20">
         <Icon color="#CACACA" height="100" icon="hugeicons:quote-up" width="100" />
 
         <section class="grid place-items-center text-start">
