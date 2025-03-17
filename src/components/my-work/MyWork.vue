@@ -41,7 +41,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
 <template>
   <section id="project" class="container max-w-7xl mx-auto px-5 lg:px-8 mt-40">
-    <section class="grid place-items-center text-center">
+    <section class="grid place-items-start text-start lg:place-items-center lg:text-center">
       <!--      main header-->
       <div class="mb-14">
         <h1 class="font-switzer-md text-4xl text-[#0C0C0C] mb-5">Explore My Works</h1>
@@ -53,7 +53,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
       <!--      main header-->
 
       <!--      images-->
-      <section class="grid grid-cols-2 gap-8 mt-5">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-5">
         <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
           <img
             ref="imagevw"
