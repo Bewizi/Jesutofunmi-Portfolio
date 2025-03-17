@@ -1,16 +1,17 @@
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue'
 import AppLink from '@/components/AppLink.vue'
+import type { MyWorkProps } from '@/types/interfacesProps.ts'
 
-interface Props {
-  image: string
-  title: string
-  mainHeader: string
-  subText: string
-  path: string
-}
+// interface Props {
+//   image: string
+//   title: string
+//   mainHeader: string
+//   subText: string
+//   path: string
+// }
 
-const myWorkImg: Ref<Array<Props>> = ref([
+const myWorkImg: Ref<MyWorkProps[]> = ref([
   {
     image: '/image/Astradrop.png',
     title: 'Astradrop',
