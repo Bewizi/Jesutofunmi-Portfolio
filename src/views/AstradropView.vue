@@ -113,7 +113,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
 <template>
   <!--  hero section-->
-  <section class="astradrop-hero-img bg-cover h-screen"></section>
+  <section class="astradrop-hero-img hidden lg:block bg-cover h-screen overflow-hidden"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
       <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Role</h6>
@@ -143,7 +143,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <!--    buttons-->
     <section class="mt-5 flex items-center gap-5">
       <button
-        class="bg-gradient-to-b from-[#D8C3F4] to-[#8631F4] text-white rounded-full px-6 py-2 font-switzer-regular text-xl"
+        class="bg-gradient-to-b from-[#D8C3F4] to-[#8631F4] text-white rounded-full px-6 py-2 font-switzer-regular lg:text-xl"
       >
         <a class="flex items-center gap-2" href="https://astradrop.com/" target="_blank">
           <span>
@@ -154,7 +154,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
       </button>
 
       <button
-        class="text-[#090909]/50 border border-[#EDEDED] hover:bg-[#F2F2F2] transition-all duration-500 rounded-full px-6 py-4 font-switzer-regular text-lg"
+        class="text-[#090909]/50 border border-[#EDEDED] hover:bg-[#F2F2F2] transition-all duration-500 rounded-full px-6 py-4 font-switzer-regular lg:text-lg"
       >
         <a
           class="flex items-center gap-2"
@@ -171,7 +171,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
   <!--  challange section-->
   <SectionCard class="mt-32">
-    <section class="flex justify-between mb-20">
+    <section class="flex flex-wrap gap-5 lg:gap-0 lg:justify-between mb-20">
       <!--  challenge-->
       <section>
         <h3 class="text-[#0C0C0C] font-switzer-sm-bold text-4xl mb-5">The Challenge⚡</h3>
@@ -186,7 +186,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
       <!--  approach-->
       <section>
         <h3 class="text-[#0C0C0C] font-switzer-sm-bold text-4xl mb-5">My Approach</h3>
-        <ul class="list-disc font-switzer-regular text-[#484848] text-lg">
+        <ul class="list-disc font-switzer-regular text-[#484848] text-lg px-5 lg:px-0">
           <li>Designed a clean, easy-to-navigate interface to enhance user experience.</li>
           <li>Focused on seamless interactions across web and mobile platforms.</li>
           <li>Ensured consistency across all touchpoints to strengthen brand identity.</li>
@@ -225,7 +225,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   <!--  landing page-->
 
   <!--  web app-->
-  <sectionCard>
+  <sectionCard class="mt-32">
     <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Webapp</h3>
     <!--    image-->
     <figure>
@@ -242,7 +242,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
       <!--      highlights-->
       <h3 class="text-[#000] text-4xl font-switzer-md mb-5 mt-10">Key Highlights</h3>
       <!--      highlights-->
-      <ul v-for="(items, index) in keyHighlights" :key="index">
+      <ul v-for="(items, index) in keyHighlights" :key="index" class="leading-normal mb-2">
         <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
           <Icon :icon="items.icon" height="32" width="32" />
           {{ items.text }}
@@ -280,7 +280,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Mobile Application</h3>
 
     <!--    image-->
-    <section class="grid grid-cols-2 gap-5">
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       <figure v-for="(images, index) in mobileAppImages" :key="index">
         <img :alt="images.altText" :src="images.image" />
       </figure>
@@ -349,7 +349,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <h4 class="font-switzer-md text-4xl mb-8">See also</h4>
 
     <!--      images-->
-    <section class="grid grid-cols-2 gap-8 mt-5">
+    <section class="grid grid-col-1 lg:grid-cols-2 gap-8 mt-5">
       <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
         <img
           ref="imagevw"
