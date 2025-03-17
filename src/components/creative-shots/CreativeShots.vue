@@ -28,7 +28,7 @@ const myWorkImg: Ref<Array<Props>> = ref([
   <section class="container max-w-7xl mx-auto px-5 lg:px-8 mt-40">
     <section class="text-start">
       <!--      main header-->
-      <section class="mb-14 flex items-center justify-between">
+      <section class="mb-14 flex items-center justify-between flex-wrap gap-5">
         <div>
           <h1 class="font-switzer-md text-4xl text-[#0C0C0C] mb-5">Creative Shots</h1>
           <p class="text-[#484848] font-switzer-regular text-xl leading-normal">
