@@ -3,16 +3,18 @@ import SocialIcons from '@/components/social-icons/SocialIcons.vue'
 </script>
 
 <template>
-  <section class="bg-[#F9F9F9] p-10 mt-32">
+  <section class="bg-[#F9F9F9] py-10 lg:p-10 mt-32">
     <section class="container max-w-7xl mx-auto px-5 lg:px-2">
       <div class="mb-10">
         <h1 class="font-switzer-md text-4xl">Let’s build something great together👨🏾‍💻</h1>
       </div>
 
       <div class="flex flex-wrap items-center justify-between gap-4">
-        <p class="font-switzer-regular text-2xl">
+        <p class="font-switzer-regular text-2xl mb-20 lg:mb-0">
           <span> Have a project in mind? </span>
-          <button class="btn text-white rounded-full px-6 py-4 font-switzer-regular text-lg">
+          <button
+            class="btn text-white rounded-full px-6 py-4 font-switzer-regular text-lg mt-5 lg:mt-0"
+          >
             <a href="https://mail.google.com/mail/u/1/#inbox?compose=new" target="_blank">
               Contact Me 📩
             </a>
