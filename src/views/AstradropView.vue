@@ -1,6 +1,114 @@
 <script lang="ts" setup>
 import SectionCard from '@/components/SectionCard.vue'
 import { Icon } from '@iconify/vue'
+import { ref, type Ref } from 'vue'
+import type { MyWorkProps } from '@/types/interfacesProps.ts'
+import AppLink from '@/components/AppLink.vue'
+
+interface KeyProps {
+  icon: string
+  text: string
+}
+
+interface MobileAppImageProps {
+  image: string
+  altText: string
+}
+
+const keyHighlights: Ref<KeyProps[]> = ref([
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'User-Friendly Interface – A clean, intuitive layout for easy navigation.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Seamless Order Management – Businesses can quickly request pickups, track deliveries, and manage transactions',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Responsive Design – Optimized for desktop and tablet users.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Real-Time Updates – Live tracking and status updates for ongoing deliveries.',
+  },
+])
+
+const mobileAppImages: Ref<MobileAppImageProps[]> = ref([
+  {
+    image: '/image/Astradrop/mobile-app-one.png',
+    altText: 'mobile app one',
+  },
+  {
+    image: '/image/Astradrop/mobile-app-two.png',
+    altText: 'mobile app two',
+  },
+  {
+    image: '/image/Astradrop/mobile-app-three.png',
+    altText: 'mobile app three',
+  },
+  {
+    image: '/image/Astradrop/mobile-app-four.png',
+    altText: 'mobile app four',
+  },
+])
+
+const busniessApp: Ref<KeyProps[]> = ref([
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: ' Create and manage delivery requests effortlessly.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Track deliveries in real time with live updates.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'View order history and manage transactions.',
+  },
+])
+
+const ridersApp: Ref<KeyProps[]> = ref([
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: ' Accept and fulfill delivery requests with ease.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Get optimized navigation and route suggestions.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: ' Update order status and track earnings in one place',
+  },
+])
+
+const myWorkImg: Ref<MyWorkProps[]> = ref([
+  {
+    image: '/image/Wakala.png',
+    title: 'Wakala',
+    mainHeader: 'WakalaPay',
+    subText:
+      'WakalaPay: Bridging the Crypto Gap. Explore how I designed a seamless crypto conversion app, solving real-world problems in the Web3 space',
+    path: '',
+  },
+  {
+    image: '/image/Barca-Edtech.png',
+    title: 'Barca-Edtech',
+    mainHeader: 'Barca EdTech',
+    subText:
+      "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
+    path: '',
+  },
+  {
+    image: '/image/Eco-Eat.png',
+    title: 'Eco-Eat',
+    mainHeader: 'EcoEat',
+    subText:
+      'Effortless Local Food Delivery. I crafted intuitive user flows and tailored design elements to deliver a seamless food ordering experience.',
+    path: '',
+  },
+])
 </script>
 
 <template>
@@ -94,6 +202,172 @@ import { Icon } from '@iconify/vue'
     <!--    image-->
   </SectionCard>
   <!--  challange section-->
+
+  <!--  landing page-->
+  <SectionCard>
+    <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Landing Page</h3>
+
+    <!--    image-->
+    <figure>
+      <img alt="Astradrop Landing Page" src="/image/Astradrop/Astradro-Landing-Page.png" />
+      <figcaption class="mt-5">
+        <p class="text-[#484848] font-switzer-regular text-lg">
+          The Astradrop landing page serves as the first touchpoint for businesses and riders
+          looking for a seamless <br />
+          delivery solution. It was designed to be responsive, intuitive, and conversion-focused,
+          ensuring that users <br />
+          can easily understand the platform’s value and take action—whether on desktop or mobile.
+        </p>
+      </figcaption>
+    </figure>
+    <!--    image-->
+  </SectionCard>
+  <!--  landing page-->
+
+  <!--  web app-->
+  <sectionCard>
+    <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Webapp</h3>
+    <!--    image-->
+    <figure>
+      <img alt="Astradrop Landing Page" src="/image/Astradrop/Astradrop-webapp.png" />
+      <figcaption class="mt-5">
+        <p class="text-[#484848] font-switzer-regular text-lg">
+          The Astradrop Web App was designed to provide businesses with a seamless way to create,
+          manage, and <br />
+          track deliveries in real time. My focus was on usability, efficiency, and responsiveness,
+          ensuring a smooth <br />
+          experience across desktop and tablet devices.
+        </p>
+      </figcaption>
+      <!--      highlights-->
+      <h3 class="text-[#000] text-4xl font-switzer-md mb-5 mt-10">Key Highlights</h3>
+      <!--      highlights-->
+      <ul v-for="(items, index) in keyHighlights" :key="index">
+        <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
+          <Icon :icon="items.icon" height="32" width="32" />
+          {{ items.text }}
+        </li>
+      </ul>
+    </figure>
+    <!--    image-->
+  </sectionCard>
+  <!--  web app-->
+
+  <!--  Admin Dashboard-->
+  <sectionCard class="mt-32">
+    <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Admin Dashboard</h3>
+
+    <!--    image-->
+    <figure>
+      <img alt="Astradrop Admin Dashboard" src="/image/Astradrop/astradrop-admin-dashboard.png" />
+      <figcaption class="mt-5">
+        <p class="text-[#484848] font-switzer-regular text-lg">
+          The Astradrop Admin Dashboard was designed to give administrators a comprehensive view of
+          platform activities, <br />
+          helping them monitor deliveries, manage users, and optimize operations efficiently. The
+          focus was on clarity, data <br />
+          accessibility, and ease of use, ensuring that admins can make quick decisions without
+          being overwhelmed.
+        </p>
+      </figcaption>
+    </figure>
+    <!--    image-->
+  </sectionCard>
+  <!--  Admin Dashboard-->
+
+  <!--  Mobile Application-->
+  <sectionCard class="mt-32">
+    <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Mobile Application</h3>
+
+    <!--    image-->
+    <section class="grid grid-cols-2 gap-5">
+      <figure v-for="(images, index) in mobileAppImages" :key="index">
+        <img :alt="images.altText" :src="images.image" />
+      </figure>
+    </section>
+    <p class="text-[#484848] font-switzer-regular text-lg mt-5">
+      The Astradrop Mobile App was built to provide a seamless experience for both businesses and
+      riders, ensuring efficient <br />
+      delivery management on the go. The app is designed with two core experiences—one for
+      businesses to request and <br />
+      track deliveries, and another for riders to accept and complete orders.
+    </p>
+    <!--    image-->
+
+    <!--    key features-->
+    <h3 class="text-[#000] text-4xl font-switzer-md mb-10 mt-10">Key Features</h3>
+
+    <!--    list business app-->
+    <h4 class="underline font-switzer-md text-2xl mb-8">Business App</h4>
+    <ul v-for="(items, index) in busniessApp" :key="index">
+      <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
+        <Icon :icon="items.icon" height="32" width="32" />
+        {{ items.text }}
+      </li>
+    </ul>
+    <!--    list business app-->
+
+    <!--    list business app-->
+    <h4 class="underline font-switzer-md text-2xl mt-10 mb-8">Rider’s App</h4>
+    <ul v-for="(items, index) in ridersApp" :key="index">
+      <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
+        <Icon :icon="items.icon" height="32" width="32" />
+        {{ items.text }}
+      </li>
+    </ul>
+    <!--    list business app-->
+    <!--    key features-->
+  </sectionCard>
+  <!--  Mobile Application-->
+
+  <!--  Astrodrop-->
+  <sectionCard class="mt-32">
+    <h4 class="font-switzer-md text-4xl mb-8">Astradrop</h4>
+
+    <p class="font-switzer-regular text-lg mb-5">
+      Astradrop streamlines delivery management with features like real-time order tracking, rider
+      dispatch, secure payments, and automated notifications <br />
+      for businesses and customers.
+    </p>
+    <p class="font-switzer-regular text-lg mb-5">
+      As a Product Designer, I focused on creating an intuitive and seamless experience by designing
+      workflows that simplify order management, optimize <br />
+      rider allocation, and enhance delivery tracking. I leveraged user research to address key
+      logistics challenges, incorporating features like smart route <br />
+      suggestions, transparent pricing, and real-time delivery updates to improve efficiency.
+    </p>
+    <p class="font-switzer-regular text-lg">
+      Designed for businesses and independent riders, Astradrop enhances operational efficiency,
+      ensures timely deliveries, and boosts customer <br />
+      satisfaction. The platform is available on web and mobile, providing an effortless,
+      user-friendly experience for managing deliveries with ease.
+    </p>
+  </sectionCard>
+  <!--  Astrodrop-->
+
+  <sectionCard class="mt-32">
+    <h4 class="font-switzer-md text-4xl mb-8">See also</h4>
+
+    <!--      images-->
+    <section class="grid grid-cols-2 gap-8 mt-5">
+      <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
+        <img
+          ref="imagevw"
+          :alt="mywork.title"
+          :src="mywork.image"
+          class="group-hover:blur-[4px] group-hover:brightness-75 transition-all duration-500 ease-in-out"
+        />
+        <AppLink
+          :to="mywork.path"
+          class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+        >
+          <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
+          <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
+        </AppLink>
+      </figure>
+    </section>
+    <!--      images-->
+  </sectionCard>
 </template>
 
 <style scoped>
