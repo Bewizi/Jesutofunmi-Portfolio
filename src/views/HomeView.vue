@@ -10,16 +10,16 @@ import SocialIcons from '@/components/social-icons/SocialIcons.vue'
   <main class="mt-20">
     <!--    Hero section-->
     <section class="container max-w-7xl mx-auto px-5 lg:px-8">
-      <section class="grid place-items-center text-center">
+      <section class="grid place-items-start text-start lg:place-items-center lg:text-center">
         <!--        social icons-->
         <SocialIcons />
         <!--        social icons-->
 
-        <h2 class="font-switzer-sm-bold text-6xl leading-normal">
+        <h2 class="font-switzer-sm-bold text-4xl lg:text-6xl leading-normal">
           Welcome to my <br />
           <strong class="text-[#8631F4]"> Design Universe 🎨 </strong>
         </h2>
-        <p class="leading-normal text-[#484848] mt-3 text-xl">
+        <p class="leading-normal text-[#484848] mt-3 lg:text-xl">
           Hi 🙂, I’m Jesutofunmi,. I am an Empathetic Product Designer & UI <br />
           Expert leveraging data-driven insights to craft seamless, user- <br />centered solutions
           that bring your vision to life
