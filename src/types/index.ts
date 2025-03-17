@@ -1,4 +1,4 @@
-export interface MyWorkProps: {
+export interface MyWorkProps {
   image: string
   title: string
   mainHeader: string

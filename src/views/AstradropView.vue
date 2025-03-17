@@ -2,7 +2,7 @@
 import SectionCard from '@/components/SectionCard.vue'
 import { Icon } from '@iconify/vue'
 import { ref, type Ref } from 'vue'
-import type { MyWorkProps } from '@/types/interfacesProps.ts'
+import type { MyWorkProps } from '@/types'
 import AppLink from '@/components/AppLink.vue'
 
 interface KeyProps {
