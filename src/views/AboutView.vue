@@ -6,8 +6,8 @@ import { Icon } from '@iconify/vue'
   <section class="container max-w-2xl mx-auto px-5 lg:px-2 mt-20">
     <!--    main heading-->
     <div class="mb-14">
-      <h6 class="font-switzer-md text-4xl mb-8">Hey there👋🏾!</h6>
-      <h1 class="font-switzer-md text-6xl">
+      <h6 class="font-switzer-md text-sm lg:text-4xl mb-8">Hey there👋🏾!</h6>
+      <h1 class="font-switzer-md text-2xl lg:text-6xl">
         I’m <strong class="text-[#8631F4]"> Jesutofunmi, </strong> and it's nice to see you here!
       </h1>
     </div>
