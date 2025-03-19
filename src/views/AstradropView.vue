@@ -113,7 +113,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
 <template>
   <!--  hero section-->
-  <section class="astradrop-hero-img hidden lg:block bg-cover h-screen overflow-hidden"></section>
+  <section class="astradrop-hero-img bg-cover h-screen"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
       <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Role</h6>
