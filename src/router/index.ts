@@ -20,6 +20,11 @@ const routes = [
     name: 'astradrop',
     component: () => import('../views/AstradropView.vue'),
   },
+  {
+    path: '/wakala',
+    name: 'wakala',
+    component: () => import('../views/WakalaView.vue'),
+  },
 ]
 
 const router = createRouter({
