@@ -2,18 +2,8 @@
 import SectionCard from '@/components/SectionCard.vue'
 import { Icon } from '@iconify/vue'
 import { ref, type Ref } from 'vue'
-import type { MyWorkProps } from '@/types'
+import type { KeyProps, MobileAppImageProps, MyWorkProps } from '@/types'
 import AppLink from '@/components/AppLink.vue'
-
-interface KeyProps {
-  icon: string
-  text: string
-}
-
-interface MobileAppImageProps {
-  image: string
-  altText: string
-}
 
 const keyHighlights: Ref<KeyProps[]> = ref([
   {
