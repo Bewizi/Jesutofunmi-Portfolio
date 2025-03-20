@@ -18,7 +18,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     mainHeader: 'WakalaPay',
     subText:
       'WakalaPay: Bridging the Crypto Gap. Explore how I designed a seamless crypto conversion app, solving real-world problems in the Web3 space',
-    path: '',
+    path: 'wakala',
   },
   {
     image: '/image/Barca-Edtech.png',
