@@ -62,12 +62,18 @@ import { Icon } from '@iconify/vue'
   </section>
 
   <!--    My Quote-->
-  <section class="bg-[#F9F9F9] p-5 mt-40 h-screen">
+  <section class="bg-[#F9F9F9] px-5 py-10 mt-40">
     <section class="container max-w-7xl mx-auto px-5 lg:px-2 mt-20">
-      <Icon color="#CACACA" height="100" icon="hugeicons:quote-up" width="100" />
+      <Icon
+        class="w-[40px] h-[40px] lg:w-[100px] lg:h-[100px]"
+        color="#CACACA"
+        icon="hugeicons:quote-up"
+      />
 
       <section class="grid place-items-center text-start">
-        <p class="leading-normal text-[#484848] mt-3 text-4xl font-switzer-md">
+        <p
+          class="leading-normal lg:leading-normal text-[#484848] mt-3 text-2xl lg:text-4xl font-switzer-md"
+        >
           I believe <strong class="text-[#A363F6]"> great design </strong> isn’t just about look,
           <br />
           it’s about <strong class="text-[#FDCA00]"> creating experiences </strong> that
@@ -79,13 +85,13 @@ import { Icon } from '@iconify/vue'
         </p>
       </section>
 
-      <Icon
-        class="float-end"
-        color="#CACACA"
-        height="100"
-        icon="hugeicons:quote-down"
-        width="100"
-      />
+      <div class="flex justify-end">
+        <Icon
+          class="w-[40px] h-[40px] lg:w-[100px] lg:h-[100px]"
+          color="#CACACA"
+          icon="hugeicons:quote-down"
+        />
+      </div>
     </section>
   </section>
   <!--    My Quote-->
