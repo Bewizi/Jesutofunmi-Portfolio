@@ -6,7 +6,7 @@ import AppCard from '@/components/AppCard.vue'
 <template>
   <SectionCard class="mt-32">
     <AppCard
-      default-class="mb-20"
+      default-class="mb-20 flex-col flex-col-reverse lg:flex-row "
       image="/image/Wakala/Onboarding-Screen.png"
       image-alt="Onboarding Screen"
       main-header="Onboarding Screen"
@@ -14,7 +14,7 @@ import AppCard from '@/components/AppCard.vue'
     />
 
     <AppCard
-      default-class="flex-row-reverse mb-20"
+      default-class="flex-col-reverse lg:flex-row-reverse mb-20"
       image="/image/Wakala/Authentication-Screen.png"
       image-alt="Authentication Screen"
       main-header="Authentication Screen"
@@ -22,7 +22,7 @@ import AppCard from '@/components/AppCard.vue'
     />
 
     <AppCard
-      default-class="mb-20"
+      default-class="mb-20 flex-col flex-col-reverse lg:flex-row"
       image="/image/Wakala/Wallet-Connection.png"
       image-alt="Wallet Connection"
       main-header="Wallet Connection"
@@ -30,7 +30,7 @@ import AppCard from '@/components/AppCard.vue'
     />
 
     <AppCard
-      default-class="flex-row-reverse mb-20"
+      default-class="flex-col-reverse lg:flex-row-reverse mb-20"
       image="/image/Wakala/Home-Screen.png"
       image-alt="Home Screen"
       main-header="HomeScreen"
@@ -38,7 +38,7 @@ import AppCard from '@/components/AppCard.vue'
     />
 
     <AppCard
-      default-class="mb-20"
+      default-class="mb-20 flex-col flex-col-reverse lg:flex-row"
       image="/image/Wakala/Bank-Details.png"
       image-alt="Add Bank Details Screen"
       main-header="Add Bank Details"
@@ -48,7 +48,7 @@ import AppCard from '@/components/AppCard.vue'
 
     <!--    conversion screen-->
     <AppCard
-      default-class="flex-col-reverse items-center justify-center text-center mb-20"
+      default-class="flex-col-reverse items-center justify-center lg:text-center mb-20"
       image="/image/Wakala/Conversion-Screen.png"
       image-alt="Conversion Screen"
       main-header="Conversion Screen"
@@ -58,14 +58,14 @@ import AppCard from '@/components/AppCard.vue'
 
     <!--    Website screen-->
     <AppCard
-      default-class="flex-col-reverse items-center justify-center text-center mb-0"
+      default-class="flex-col-reverse gap-0 lg:gap-[80px] text-start lg:text-center mb-0"
       image="/image/Wakala/Wakala-web-hero.png"
       image-alt="Wakala Website Hero Screen"
       main-header="Website Design"
     />
 
     <AppCard
-      default-class="flex-col-reverse items-center justify-center text-center mb-20"
+      default-class="flex-col-reverse items-center justify-center gap-[10px] lg:gap-[20px] mb-20"
       image="/image/Wakala/Website-hero.png"
       image-alt="Website Screen"
     />
