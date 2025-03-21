@@ -45,6 +45,31 @@ import AppCard from '@/components/AppCard.vue'
       main-text="The Bank Details screen in WakalaPay ensures a smooth and secure way for users to link their local bank accounts. 🔗💳"
       sub-text="Since seamless cashing out is essential, this screen is designed with simplicity in mind—users can add their bank name, account number, and verify ownership effortlessly. With clear feedback and security measures in place, WakalaPay ensures that withdrawals are fast and hassle-free."
     />
+
+    <!--    conversion screen-->
+    <AppCard
+      default-class="flex-col-reverse items-center justify-center text-center mb-20"
+      image="/image/Wakala/Conversion-Screen.png"
+      image-alt="Conversion Screen"
+      main-header="Conversion Screen"
+      main-text="Designed for simplicity and speed, users can seamlessly convert their crypto to another crypto or to local currency (Naira) at real-time exchange rates. The interface provides clarity on the amount, fees (gas + platform fee), and final balance before confirming. 🔥"
+    />
+    <!--    conversion screen-->
+
+    <!--    Website screen-->
+    <AppCard
+      default-class="flex-col-reverse items-center justify-center text-center mb-0"
+      image="/image/Wakala/Wakala-web-hero.png"
+      image-alt="Wakala Website Hero Screen"
+      main-header="Website Design"
+    />
+
+    <AppCard
+      default-class="flex-col-reverse items-center justify-center text-center mb-20"
+      image="/image/Wakala/Website-hero.png"
+      image-alt="Website Screen"
+    />
+    <!--    website screen-->
   </SectionCard>
 </template>
 
