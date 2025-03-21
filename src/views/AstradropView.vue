@@ -80,7 +80,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     mainHeader: 'WakalaPay',
     subText:
       'WakalaPay: Bridging the Crypto Gap. Explore how I designed a seamless crypto conversion app, solving real-world problems in the Web3 space',
-    path: '',
+    path: '/wakala',
   },
   {
     image: '/image/Barca-Edtech.png',
@@ -335,7 +335,8 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   </sectionCard>
   <!--  Astrodrop-->
 
-  <sectionCard class="mt-32">
+  <!--  see also-->
+  <SectionCard class="mt-32">
     <h4 class="font-switzer-md text-4xl mb-8">See also</h4>
 
     <!--      images-->
@@ -357,7 +358,8 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
       </figure>
     </section>
     <!--      images-->
-  </sectionCard>
+  </SectionCard>
+  <!--  -->
 </template>
 
 <style scoped>
