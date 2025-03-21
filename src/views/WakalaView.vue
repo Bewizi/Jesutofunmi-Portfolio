@@ -82,7 +82,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     mainHeader: 'Barca EdTech',
     subText:
       "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
-    path: '',
+    path: '/barca',
   },
   {
     image: '/image/Eco-Eat.png',
