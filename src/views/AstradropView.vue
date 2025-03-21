@@ -350,7 +350,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
         />
         <AppLink
           :to="mywork.path"
-          class="absolutetop-8 lg:inset-0 lg:top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+          class="absolute top-8 lg:inset-0 lg:top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
         >
           <h1 class="font-switzer-sm-bold text-2xl lg:text-4xl mb-8">{{ mywork.mainHeader }}</h1>
           <p class="font-switzer-md lg:text-2xl leading-normal">{{ mywork.subText }}</p>
