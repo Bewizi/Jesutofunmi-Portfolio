@@ -3,6 +3,7 @@ import SectionCard from '@/components/SectionCard.vue'
 import { type Ref, ref } from 'vue'
 import type { KeyProps, MobileAppImageProps } from '@/types'
 import { Icon } from '@iconify/vue'
+import WakalaScreens from '@/components/wakala-screens/Wakala-Screens.vue'
 
 const reviewImage: Ref<MobileAppImageProps[]> = ref([
   {
@@ -163,6 +164,10 @@ const solutionsList: Ref<KeyProps[]> = ref([
   </SectionCard>
 
   <!--  BrainStorming Solutions-->
+
+  <!-- wakala screens -->
+  <WakalaScreens />
+  <!-- wakala screens -->
 </template>
 
 <style scoped>
