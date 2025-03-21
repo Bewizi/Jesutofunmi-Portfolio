@@ -337,7 +337,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
   <!--  see also-->
   <SectionCard class="mt-32">
-    <h4 class="font-switzer-md text-4xl mb-8">See also</h4>
+    <h4 class="font-switzer-md text-2xl lg:text-4xl mb-8">See also</h4>
 
     <!--      images-->
     <section class="grid grid-col-1 lg:grid-cols-2 gap-8 mt-5">
@@ -350,16 +350,16 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
         />
         <AppLink
           :to="mywork.path"
-          class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+          class="absolutetop-8 lg:inset-0 lg:top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
         >
-          <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
-          <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
+          <h1 class="font-switzer-sm-bold text-2xl lg:text-4xl mb-8">{{ mywork.mainHeader }}</h1>
+          <p class="font-switzer-md lg:text-2xl leading-normal">{{ mywork.subText }}</p>
         </AppLink>
       </figure>
     </section>
     <!--      images-->
   </SectionCard>
-  <!--  -->
+  <!-- see also -->
 </template>
 
 <style scoped>
