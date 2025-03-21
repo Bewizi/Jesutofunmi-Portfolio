@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import SectionCard from '@/components/SectionCard.vue'
 import { type Ref, ref } from 'vue'
-import type { MobileAppImageProps } from '@/types'
+import type { KeyProps, MobileAppImageProps } from '@/types'
+import { Icon } from '@iconify/vue'
 
 const reviewImage: Ref<MobileAppImageProps[]> = ref([
   {
@@ -23,6 +24,44 @@ const reviewImage: Ref<MobileAppImageProps[]> = ref([
     id: 4,
     image: '/image/Wakala/Review-four.png',
     altText: '',
+  },
+])
+
+const problemsList: Ref<KeyProps[]> = ref([
+  {
+    icon: 'ri:close-fill',
+    text: 'High Gas Fees – Users struggle with high transaction costs, especially for small amounts.',
+  },
+  {
+    icon: 'ri:close-fill',
+    text: 'Complicated Wallet Process – Many platforms require holding funds in a specific wallet before transactions',
+  },
+  {
+    icon: 'ri:close-fill',
+    text: 'Slow Conversion Time – Delays in processing crypto-to-fiat transactions lead to frustration.',
+  },
+  {
+    icon: 'ri:close-fill',
+    text: 'Trust Issues – Users are skeptical about security and reliability.',
+  },
+])
+
+const solutionsList: Ref<KeyProps[]> = ref([
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Auto-Deduction of Gas Fees – Instead of requiring upfront gas fees, the app could deduct fees from the final transaction',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Multiple Wallet Support – Users should be able to connect various wallets, reducing limitations',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Instant Conversion Feature – Real-time crypto-to-Naira conversion with reduced processing delays.',
+  },
+  {
+    icon: 'fluent-emoji-flat:check-mark-button',
+    text: 'Escrow System for Security – A secure transaction process to build trust',
   },
 ])
 </script>
@@ -82,14 +121,56 @@ const reviewImage: Ref<MobileAppImageProps[]> = ref([
     </p>
   </sectionCard>
   <!--  Research & Competitive Analysis-->
+
+  <!--  Defining the problem statement-->
+  <SectionCard class="mt-32">
+    <section class="mb-10">
+      <div class="mb-8">
+        <h4 class="underline font-switzer-md text-3xl mb-5">Defining the Problem Statement</h4>
+        <p class="text-[#484848] text-xl">
+          From the research, some key issues users face <br />
+          when converting crypto to Naira include:
+        </p>
+      </div>
+
+      <ul v-for="(items, index) in problemsList" :key="index">
+        <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
+          <Icon :icon="items.icon" class="h-[32px] w-[32px] text-red-500" />
+          {{ items.text }}
+        </li>
+      </ul>
+    </section>
+
+    <!--  Defining the problem statement-->
+
+    <!--  BrainStorming Solutions-->
+    <section>
+      <div class="mb-8">
+        <h4 class="underline font-switzer-md text-3xl mb-5">Brainstorming Solutions</h4>
+        <p class="text-[#484848] text-xl">
+          To address these pain points, here are some initial ideas i <br />
+          came up with:
+        </p>
+      </div>
+
+      <ul v-for="(items, index) in solutionsList" :key="index">
+        <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
+          <Icon :icon="items.icon" class="h-[32px] w-[32px]" />
+          {{ items.text }}
+        </li>
+      </ul>
+    </section>
+  </SectionCard>
+
+  <!--  BrainStorming Solutions-->
 </template>
 
 <style scoped>
 .wakala-hero-img {
-  background-image: url('/public/image/Wakala/Wakala-hero-image.png');
+  background-image: url('/image/Wakala/Wakala-hero-image.png');
 }
 
 .research-competitive-analysis {
-  background-image: url('/public/image/Wakala/Research-competitive-analysis.png');
+  background-image: url('/image/Wakala/Research-competitive-analysis.png');
 }
 </style>
