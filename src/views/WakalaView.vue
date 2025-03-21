@@ -120,8 +120,10 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   <section class="research-competitive-analysis bg-cover h-screen mt-3"></section>
 
   <sectionCard class="mt-32">
-    <h1 class="font-switzer-sm-bold text-4xl text-[#0C0C0C]">Research & Competitive Analysis</h1>
-    <p class="font-switzer-regular text-[#484848] mt-5 text-lg">
+    <h1 class="font-switzer-sm-bold text-2xl lg:text-4xl text-[#0C0C0C]">
+      Research & Competitive Analysis
+    </h1>
+    <p class="font-switzer-regular text-[#484848] mt-5 leading-normal lg:leading-normal lg:text-lg">
       Before designing WakalaPay, I conducted in-depth research and competitive analysis to <br />
       understand the challenges users face with crypto-to-fiat conversions. The goal was to create
       <br />
@@ -144,7 +146,9 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     </section>
     <!--    image-->
 
-    <p class="mt-10 text-[#484848] font-switzer-regular text-lg">
+    <p
+      class="mt-10 text-[#484848] font-switzer-regular leading-normal lg:leading-normal lg:text-lg"
+    >
       Some insights i got from playstore while doing competitive <br />
       analysis and also questions i asked some other cryoto enthusiast
     </p>
@@ -155,16 +159,20 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   <SectionCard class="mt-32">
     <section class="mb-10">
       <div class="mb-8">
-        <h4 class="underline font-switzer-md text-3xl mb-5">Defining the Problem Statement</h4>
-        <p class="text-[#484848] text-xl">
+        <h4 class="underline font-switzer-md text-2xl lg:text-3xl mb-5">
+          Defining the Problem Statement
+        </h4>
+        <p class="text-[#484848] leading-normal lg:leading-normal lg:text-xl">
           From the research, some key issues users face <br />
           when converting crypto to Naira include:
         </p>
       </div>
 
-      <ul v-for="(items, index) in problemsList" :key="index">
-        <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
-          <Icon :icon="items.icon" class="h-[32px] w-[32px] text-red-500" />
+      <ul v-for="(items, index) in problemsList" :key="index" class="mb-2 lg:mb-1">
+        <li
+          class="flex items-center gap-2 text-[#484848] font-switzer-regular text-xs lg:text-base"
+        >
+          <Icon :icon="items.icon" class="w-[24px] h-[24px] lg:h-[32px] lg:w-[32px] text-red-500" />
           {{ items.text }}
         </li>
       </ul>
@@ -175,16 +183,18 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <!--  BrainStorming Solutions-->
     <section>
       <div class="mb-8">
-        <h4 class="underline font-switzer-md text-3xl mb-5">Brainstorming Solutions</h4>
-        <p class="text-[#484848] text-xl">
+        <h4 class="underline font-switzer-md text-2xl lg:text-3xl mb-5">Brainstorming Solutions</h4>
+        <p class="text-[#484848] leading-normal lg:leading-normal lg:text-xl">
           To address these pain points, here are some initial ideas i <br />
           came up with:
         </p>
       </div>
 
-      <ul v-for="(items, index) in solutionsList" :key="index">
-        <li class="flex items-center gap-2 text-[#484848] font-switzer-regular">
-          <Icon :icon="items.icon" class="h-[32px] w-[32px]" />
+      <ul v-for="(items, index) in solutionsList" :key="index" class="mb-2 lg:mb-1">
+        <li
+          class="flex items-center gap-2 text-[#484848] font-switzer-regular text-xs lg:text-base"
+        >
+          <Icon :icon="items.icon" class="w-[24px] h-[24px] lg:h-[32px] lg:w-[32px]" />
           {{ items.text }}
         </li>
       </ul>
@@ -197,9 +207,20 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   <WakalaScreens />
   <!-- wakala screens -->
 
+  <!--  descrption-->
+  <SectionCard>
+    <h4 class="font-switzer-md text-2xl lg:text-4xl text-[#0C0C0C]">WakalaPay</h4>
+    <p class="font-switzer-regular text-[#484848] mt-5 leading-normal lg:leading-normal lg:text-lg">
+      WakalaPay is a product of strategic research and design thinking, aimed at making crypto
+      transactions seamless. Every interaction is optimized to <br />
+      enhance usability, ensuring users can convert and transact effortlessly.
+    </p>
+  </SectionCard>
+  <!--  descrption-->
+
   <!--  see also-->
   <SectionCard class="mt-32">
-    <h4 class="font-switzer-md text-4xl mb-8">See also</h4>
+    <h4 class="font-switzer-md text-2xl lg:text-4xl mb-8">See also</h4>
 
     <!--      images-->
     <section class="grid grid-col-1 lg:grid-cols-2 gap-8 mt-5">
@@ -212,10 +233,12 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
         />
         <AppLink
           :to="mywork.path"
-          class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+          class="absolute top-8 lg:inset-0 lg:top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
         >
-          <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
-          <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
+          <h1 class="font-switzer-sm-bold text-2xl lg:text-4xl mb-5 lg:mb-8">
+            {{ mywork.mainHeader }}
+          </h1>
+          <p class="font-switzer-md lg:text-2xl leading-normal">{{ mywork.subText }}</p>
         </AppLink>
       </figure>
     </section>
