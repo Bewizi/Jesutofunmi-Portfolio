@@ -19,18 +19,18 @@ defineProps<{
 
     <!--      text-->
     <div>
-      <h1 v-if="mainHeader" class="text-[#0C0C0C] font-switzer-md text-3xl mb-5">
+      <h1 v-if="mainHeader" class="text-[#0C0C0C] font-switzer-md text-2xl lg:text-3xl mb-5">
         {{ mainHeader }}
       </h1>
       <p
         v-if="mainText"
-        class="text-[#484848] text-lg font-switzer-regular leading-normal max-w-4xl mb-8"
+        class="text-[#484848] text-sm lg:text-lg font-switzer-regular leading-normal max-w-4xl mb-8"
       >
         {{ mainText }}
       </p>
       <p
         v-if="subText"
-        class="text-[#484848] text-lg font-switzer-regular leading-normal max-w-4xl"
+        class="text-[#484848] text-sm lg:text-lg font-switzer-regular leading-normal max-w-4xl"
       >
         {{ subText }}
       </p>
