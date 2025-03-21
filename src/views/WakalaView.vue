@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import SectionCard from '@/components/SectionCard.vue'
 import { type Ref, ref } from 'vue'
-import type { KeyProps, MobileAppImageProps } from '@/types'
+import type { KeyProps, MobileAppImageProps, MyWorkProps } from '@/types'
 import { Icon } from '@iconify/vue'
 import WakalaScreens from '@/components/wakala-screens/Wakala-Screens.vue'
+import AppLink from '@/components/AppLink.vue'
 
 const reviewImage: Ref<MobileAppImageProps[]> = ref([
   {
@@ -63,6 +64,33 @@ const solutionsList: Ref<KeyProps[]> = ref([
   {
     icon: 'fluent-emoji-flat:check-mark-button',
     text: 'Escrow System for Security – A secure transaction process to build trust',
+  },
+])
+
+const myWorkImg: Ref<MyWorkProps[]> = ref([
+  {
+    image: '/image/Astradrop.png',
+    title: 'Astradrop',
+    mainHeader: 'Astradrop',
+    subText:
+      "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
+    path: '/astradrop',
+  },
+  {
+    image: '/image/Barca-Edtech.png',
+    title: 'Barca-Edtech',
+    mainHeader: 'Barca EdTech',
+    subText:
+      "Designing Seamless Logistics: Explore my work on Astradrop's website, web app, and mobile application, crafted to simplify delivery experiences",
+    path: '',
+  },
+  {
+    image: '/image/Eco-Eat.png',
+    title: 'Eco-Eat',
+    mainHeader: 'EcoEat',
+    subText:
+      'Effortless Local Food Delivery. I crafted intuitive user flows and tailored design elements to deliver a seamless food ordering experience.',
+    path: '',
   },
 ])
 </script>
@@ -168,6 +196,32 @@ const solutionsList: Ref<KeyProps[]> = ref([
   <!-- wakala screens -->
   <WakalaScreens />
   <!-- wakala screens -->
+
+  <!--  see also-->
+  <SectionCard class="mt-32">
+    <h4 class="font-switzer-md text-4xl mb-8">See also</h4>
+
+    <!--      images-->
+    <section class="grid grid-col-1 lg:grid-cols-2 gap-8 mt-5">
+      <figure v-for="(mywork, index) in myWorkImg" :key="index" class="group relative">
+        <img
+          ref="imagevw"
+          :alt="mywork.title"
+          :src="mywork.image"
+          class="group-hover:blur-[4px] group-hover:brightness-75 transition-all duration-500 ease-in-out"
+        />
+        <AppLink
+          :to="mywork.path"
+          class="absolute inset-0 top-20 px-12 text-start flex flex-col flex-wrap items-start justify-start opacity-0 invisible group-hover:visible group-hover:text-white group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-9999"
+        >
+          <h1 class="font-switzer-sm-bold text-4xl mb-8">{{ mywork.mainHeader }}</h1>
+          <p class="font-switzer-md text-2xl leading-normal">{{ mywork.subText }}</p>
+        </AppLink>
+      </figure>
+    </section>
+    <!--      images-->
+  </SectionCard>
+  <!-- see also -->
 </template>
 
 <style scoped>
