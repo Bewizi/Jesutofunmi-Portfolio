@@ -25,6 +25,11 @@ const routes = [
     name: 'wakala',
     component: () => import('../views/WakalaView.vue'),
   },
+  {
+    path: '/barca',
+    name: 'barca',
+    component: () => import('../views/BarcaView.vue'),
+  },
 ]
 
 const router = createRouter({
