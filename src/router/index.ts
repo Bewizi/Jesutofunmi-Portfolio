@@ -30,6 +30,10 @@ const routes = [
     name: 'barca',
     component: () => import('../views/BarcaView.vue'),
   },
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFound.vue'),
+  },
 ]
 
 const router = createRouter({
