@@ -61,23 +61,23 @@ const designProcess: Ref<KeyProps[]> = ref([
   <section class="barca-hero-img bg-cover h-screen"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
-      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Role</h6>
-      <p class="text-[#0C0C0C] font-switzer-md font-medium text-2xl">Ui/Ux Designer</p>
+      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-sm lg:text-xl mb-3">Role</h6>
+      <p class="text-[#0C0C0C] font-switzer-md font-medium text-lg lg:text-2xl">Ui/Ux Designer</p>
     </div>
 
     <div>
-      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Tools</h6>
-      <p class="text-[#0C0C0C] font-switzer-md font-medium text-2xl">Figma</p>
+      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-sm lg:text-xl mb-3">Tools</h6>
+      <p class="text-[#0C0C0C] font-switzer-md font-medium text-lg lg:text-2xl">Figma</p>
     </div>
 
     <div>
-      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">TimeFrame</h6>
-      <p class="text-[#0C0C0C] font-switzer-md font-medium text-2xl">4weeks</p>
+      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-sm lg:text-xl mb-3">TimeFrame</h6>
+      <p class="text-[#0C0C0C] font-switzer-md font-medium text-lg lg:text-2xl">4weeks</p>
     </div>
 
     <div>
-      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Team Size</h6>
-      <p class="text-[#0C0C0C] font-switzer-md font-medium text-2xl">7 Members</p>
+      <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-sm lg:text-xl mb-3">Team Size</h6>
+      <p class="text-[#0C0C0C] font-switzer-md font-medium text-lg lg:text-2xl">7 Members</p>
     </div>
   </section>
   <!--  hero section-->
