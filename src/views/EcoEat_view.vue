@@ -165,7 +165,11 @@ const visualDesing = reactive<MobileAppImageProps[]>([
     </ul>
 
     <figure class="mt-14">
-      <img src="/public/image/EcoEat/EcoEat-Proto-Persona.jpg" alt="" class="max-w-4xl mx-auto" />
+      <img
+        src="/public/image/EcoEat/EcoEat-Proto-Persona.jpg"
+        alt=""
+        class="lg:max-w-4xl lg:mx-auto"
+      />
     </figure>
   </SectionCard>
   <!-- Noteworthy Findings -->
