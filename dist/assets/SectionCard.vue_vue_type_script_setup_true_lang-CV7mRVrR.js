@@ -1,1 +1,0 @@
-import{d as s,c as t,n as l,l as o,o as n}from"./index-DMs0RcPo.js";const p=s({__name:"SectionCard",props:{defaultClass:{type:String,default:"max-w-7xl mx-auto px-5 lg:px-8"}},setup(e){return(a,r)=>(n(),t("section",{class:l(["class",e.defaultClass])},[o(a.$slots,"default")],2))}});export{p as _};
