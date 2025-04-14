@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import SectionCard from '@/components/SectionCard.vue'
 import AppLink from '@/components/AppLink.vue'
-import { ref, type Ref } from 'vue'
-import type { KeyProps, MyWorkProps } from '@/types'
+import { reactive, ref, type Ref } from 'vue'
+import type { KeyProps, MobileAppImageProps, MyWorkProps } from '@/types'
 import { Icon } from '@iconify/vue'
 
 const myWorkImg: Ref<MyWorkProps[]> = ref([
@@ -54,6 +54,39 @@ const designProcess: Ref<KeyProps[]> = ref([
     text: 'Test',
   },
 ])
+
+const visualDesing = reactive<MobileAppImageProps[]>([
+  {
+    id: 1,
+    image: '/image/Barca/visualDesign-one.png',
+    altText: '',
+  },
+  {
+    id: 2,
+    image: '/image/Barca/visualDesign-two.png',
+    altText: '',
+  },
+  {
+    id: 3,
+    image: '/image/Barca/visualDesign-three.png',
+    altText: '',
+  },
+  {
+    id: 4,
+    image: '/image/Barca/visualDesign-four.png',
+    altText: '',
+  },
+  {
+    id: 5,
+    image: '/image/Barca/visualDesign-five.png',
+    altText: '',
+  },
+  {
+    id: 6,
+    image: '/image/Barca/visualDesign-six.png',
+    altText: '',
+  },
+])
 </script>
 
 <template>
@@ -87,7 +120,7 @@ const designProcess: Ref<KeyProps[]> = ref([
     <h1 class="font-switzer-sm-bold text-2xl lg:text-4xl">
       Barca- The Ultimate Exam Preparation Platform
     </h1>
-    <p class="font-switzer-regular mt-5 leading-loose lg:leading-loose lg:text-lg">
+    <p class="font-switzer-regular mt-5 leading-loosgit e lg:leading-loose lg:text-lg">
       BARCA is an online learning platform that helps students excel in international exams like
       IELTS, <br />
       TOEFL, SAT, and GRE. It offers study materials, practice questions, interactive quizzes,
@@ -215,6 +248,64 @@ const designProcess: Ref<KeyProps[]> = ref([
     </p>
   </SectionCard>
   <!--  User Search-->
+
+  <!-- image edu commit -->
+  <section class="mt-32">
+    <img alt="Braca Edu Commit" src="/image/Barca/Braca-Edu-Commit.png" />
+  </section>
+  <!-- image edu commit -->
+
+  <!--  -->
+  <SectionCard class="mt-32">
+    <section class="flex items-center flex-col mb-20">
+      <h4 class="font-switzer-sm-bold text-4xl mb-5 text-[#0C0C0C]">COMPETITIVE ANALYSIS</h4>
+      <p class="font-switzer-md text-lg max-w-3xl text-center mx-auto text-[#484848]">
+        We conducted a competitive analysis to assess strengths, weaknesses, and market gaps,
+        identifying opportunities Barca can leverage to stand out.
+      </p>
+    </section>
+    <figure>
+      <img alt="Barca Opportunities" src="/image/Barca/Barca-Opportunities.png" />
+    </figure>
+  </SectionCard>
+  <!--  -->
+
+  <!--  USER PERSONAS MAPS-->
+  <SectionCard class="mt-32">
+    <h4 class="text-4xl font-switzer-md mb-14">USER PERSONAS & EMPATHY MAPS</h4>
+    <figure>
+      <img alt="Barca User Persona" src="/image/Barca/Barca-User-Personas.png" />
+    </figure>
+  </SectionCard>
+  <!--  USER PERSONAS MAPS-->
+
+  <!-- Low Fidelity Wireframe -->
+  <SectionCard>
+    <h4 class="text-4xl font-switzer-md mb-14">Low Fidelity Wireframe</h4>
+    <div class="flex flex-col gap-8 lg:flex-row">
+      <figure>
+        <img src="/image/Barca/wireframe-one.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/image/Barca/wireframe-two.png" alt="" />
+      </figure>
+    </div>
+  </SectionCard>
+  <!-- Low Fidelity Wireframe -->
+
+  <!-- Visual Design -->
+  <SectionCard>
+    <h4 class="text-4xl font-switzer-md mb-14">Visual Design</h4>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-14">
+      <figure v-for="items in visualDesing" :key="items.id">
+        <img :src="items.image" :alt="items.altText" />
+      </figure>
+    </div>
+    <figure>
+      <img src="/image/Barca/visualDesign-desktop.png" alt="" />
+    </figure>
+  </SectionCard>
+  <!-- Visual Design -->
 
   <!--  see also-->
   <SectionCard class="mt-32">
