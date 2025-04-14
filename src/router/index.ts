@@ -31,6 +31,11 @@ const routes = [
     component: () => import('../views/BarcaView.vue'),
   },
   {
+    path: '/ecoEat',
+    name: 'ecoEat',
+    component: () => import('../views/EcoEat_view.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
     component: () => import('../views/NotFound.vue'),
   },
