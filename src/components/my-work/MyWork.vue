@@ -34,7 +34,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     mainHeader: 'EcoEat',
     subText:
       'Effortless Local Food Delivery. I crafted intuitive user flows and tailored design elements to deliver a seamless food ordering experience.',
-    path: '',
+    path: '/ecoEat',
   },
 ])
 </script>
@@ -74,14 +74,6 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
       </section>
       <!--      images-->
     </section>
-
-    <!--    link to view all work-->
-    <div class="mt-10 flex items-center justify-center">
-      <button class="text-[#8631F4] font-switzer-md text-xl underline">
-        Click to see more of my case studies
-      </button>
-    </div>
-    <!--    link to view all work-->
   </section>
 </template>
 
