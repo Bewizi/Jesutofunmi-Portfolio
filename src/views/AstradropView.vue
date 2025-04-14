@@ -96,7 +96,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     mainHeader: 'EcoEat',
     subText:
       'Effortless Local Food Delivery. I crafted intuitive user flows and tailored design elements to deliver a seamless food ordering experience.',
-    path: '',
+    path: '/ecoEat',
   },
 ])
 </script>
