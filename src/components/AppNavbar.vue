@@ -78,7 +78,7 @@ useIntersectionObserver(
           <div>
             <button class="btn text-white rounded-full px-6 py-2 font-switzer-md text-xl">
               <a
-                href="https://drive.google.com/file/d/1XA87USe3lxBhAE6Lu17rQHrZ3Lo-u5ZM/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1tSooicZ3EjHmqaOSZr8HEjvqZzJuydN-/view"
                 target="_blank"
               >
                 View Resume
@@ -92,7 +92,7 @@ useIntersectionObserver(
           <div class="lg:hidden">
             <button class="btn text-white rounded-full px-6 py-2 font-switzer-regular text-xs">
               <a
-                href="https://drive.google.com/file/d/1XA87USe3lxBhAE6Lu17rQHrZ3Lo-u5ZM/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1tSooicZ3EjHmqaOSZr8HEjvqZzJuydN-/view"
                 target="_blank"
               >
                 View Resume
