@@ -1,11 +1,32 @@
-<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
 
-</script>
+export function useFadeInOnScroll() {
+  const isVisible = ref(false)
+  const elementRef = ref<HTMLElement | null>(null)
 
-<template>
-  $END$
-</template>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true
+          observer.disconnect()
+        }
+      })
+    },
+    {
+      threshold: 0.1, // When 10% of the element is visible
+    },
+  )
 
-<style scoped>
+  onMounted(() => {
+    if (elementRef.value) {
+      observer.observe(elementRef.value)
+    }
+  })
 
-</style>
+  onUnmounted(() => {
+    observer.disconnect()
+  })
+
+  return { elementRef, isVisible }
+}
