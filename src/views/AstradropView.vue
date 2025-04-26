@@ -1,9 +1,14 @@
 <script lang="ts" setup>
 import SectionCard from '@/components/SectionCard.vue'
 import { Icon } from '@iconify/vue'
-import { ref, type Ref } from 'vue'
+import { onMounted, type Ref, ref } from 'vue'
 import type { KeyProps, MobileAppImageProps, MyWorkProps } from '@/types'
 import AppLink from '@/components/AppLink.vue'
+import { useIntersectionObserver } from '@vueuse/core'
+
+const imageRefs = ref<HTMLElement[]>([])
+
+const observeElementRef = ref<HTMLElement | null>(null)
 
 const keyHighlights: Ref<KeyProps[]> = ref([
   {
@@ -99,11 +104,46 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     path: '/ecoEat',
   },
 ])
+
+onMounted(() => {
+  imageRefs.value.forEach((el) => {
+    useIntersectionObserver(
+      el,
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.remove('opacity-0')
+          el.classList.add('animate__animated', 'animate__fadeIn')
+        } else {
+          el.classList.add('opacity-0')
+          el.classList.remove('animate__animated', 'animate__fadeIn')
+        }
+      },
+      { threshold: 0.5 },
+    )
+    el.classList.add('opacity-0') // Initialize with opacity-0
+  })
+
+  useIntersectionObserver(
+    observeElementRef,
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0')
+        entry.target.classList.add('animate__animated', 'animate__fadeIn')
+      } else {
+        entry.target.classList.add('opacity-0')
+        entry.target.classList.remove('animate__animated', 'animate__fadeIn')
+      }
+    },
+    {
+      threshold: 0.5,
+    },
+  )
+})
 </script>
 
 <template>
   <!--  hero section-->
-  <section class="astradrop-hero-img bg-cover h-screen"></section>
+  <section ref="observeElementRef" class="astradrop-hero-img bg-cover h-screen"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
       <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Role</h6>
@@ -186,7 +226,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     </section>
 
     <!--    image-->
-    <figure>
+    <figure ref="observeElementRef">
       <img alt="Astradrop Dashboard" src="/image/Astradrop/astradrop-dashboard.png" />
     </figure>
     <!--    image-->
@@ -198,7 +238,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Landing Page</h3>
 
     <!--    image-->
-    <figure>
+    <figure ref="observeElementRef">
       <img alt="Astradrop Landing Page" src="/image/Astradrop/Astradro-Landing-Page.png" />
       <figcaption class="mt-5">
         <p class="text-[#484848] font-switzer-regular text-lg">
@@ -218,7 +258,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   <sectionCard class="mt-32">
     <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Webapp</h3>
     <!--    image-->
-    <figure>
+    <figure ref="observeElementRef">
       <img alt="Astradrop Landing Page" src="/image/Astradrop/Astradrop-webapp.png" />
       <figcaption class="mt-5">
         <p class="text-[#484848] font-switzer-regular text-lg">
@@ -248,7 +288,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <h3 class="text-[#000] text-4xl font-switzer-md mb-10">Admin Dashboard</h3>
 
     <!--    image-->
-    <figure>
+    <figure ref="observeElementRef">
       <img alt="Astradrop Admin Dashboard" src="/image/Astradrop/astradrop-admin-dashboard.png" />
       <figcaption class="mt-5">
         <p class="text-[#484848] font-switzer-regular text-lg">
@@ -271,8 +311,8 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
     <!--    image-->
     <section class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-      <figure v-for="(images, index) in mobileAppImages" :key="index">
-        <img :alt="images.altText" :src="images.image" />
+      <figure v-for="(img, index) in mobileAppImages" :key="index">
+        <img ref="imageRefs" :alt="img.altText" :src="img.image" />
       </figure>
     </section>
     <p class="text-[#484848] font-switzer-regular text-lg mt-5">
