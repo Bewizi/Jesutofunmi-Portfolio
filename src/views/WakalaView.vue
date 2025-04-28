@@ -5,6 +5,9 @@ import type { KeyProps, MobileAppImageProps, MyWorkProps } from '@/types'
 import { Icon } from '@iconify/vue'
 import WakalaScreens from '@/components/wakala-screens/Wakala-Screens.vue'
 import AppLink from '@/components/AppLink.vue'
+import { useFadeInOnScroll } from '@/composables/useFadeInOnScroll.ts'
+
+const { imageRefs, observeElementRef } = useFadeInOnScroll()
 
 const reviewImage: Ref<MobileAppImageProps[]> = ref([
   {
@@ -97,7 +100,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
 
 <template>
   <!--  hero section-->
-  <section class="wakala-hero-img bg-cover h-screen"></section>
+  <section ref="observeElementRef" class="wakala-hero-img bg-cover h-screen"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
       <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-xl mb-3">Role</h6>
@@ -117,7 +120,10 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
   <!--  hero section-->
 
   <!--  Research & Competitive Analysis-->
-  <section class="research-competitive-analysis bg-cover h-screen mt-3"></section>
+  <section
+    ref="observeElementRef"
+    class="research-competitive-analysis bg-cover h-screen mt-3"
+  ></section>
 
   <sectionCard class="mt-32">
     <h1 class="font-switzer-sm-bold text-2xl lg:text-4xl text-[#0C0C0C]">
@@ -134,7 +140,7 @@ const myWorkImg: Ref<MyWorkProps[]> = ref([
     <section class="bg-[#F6F6F6] mt-10 p-5">
       <section class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          <figure v-for="items in reviewImage" :key="items.id">
+          <figure v-for="items in reviewImage" :key="items.id" ref="imageRefs">
             <img :src="items.image" alt="" />
           </figure>
         </div>
