@@ -1,32 +1,44 @@
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 
 export function useFadeInOnScroll() {
-  const isVisible = ref(false)
-  const elementRef = ref<HTMLElement | null>(null)
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          isVisible.value = true
-          observer.disconnect()
-        }
-      })
-    },
-    {
-      threshold: 0.1, // When 10% of the element is visible
-    },
-  )
+  const imageRefs = ref<HTMLElement[]>([])
+  const observeElementRef = ref<HTMLElement | null>(null)
 
   onMounted(() => {
-    if (elementRef.value) {
-      observer.observe(elementRef.value)
-    }
+    imageRefs.value.forEach((el) => {
+      useIntersectionObserver(
+        el,
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.remove('opacity-0')
+            el.classList.add('animate__animated', 'animate__fadeIn')
+          } else {
+            el.classList.add('opacity-0')
+            el.classList.remove('animate__animated', 'animate__fadeIn')
+          }
+        },
+        { threshold: 0.5 },
+      )
+      el.classList.add('opacity-0') // Initialize with opacity-0
+    })
+
+    useIntersectionObserver(
+      observeElementRef,
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0')
+          entry.target.classList.add('animate__animated', 'animate__fadeIn')
+        } else {
+          entry.target.classList.add('opacity-0')
+          entry.target.classList.remove('animate__animated', 'animate__fadeIn')
+        }
+      },
+      {
+        threshold: 0.5,
+      },
+    )
   })
 
-  onUnmounted(() => {
-    observer.disconnect()
-  })
-
-  return { elementRef, isVisible }
+  return { imageRefs, observeElementRef }
 }
