@@ -4,6 +4,9 @@ import AppLink from '@/components/AppLink.vue'
 import { reactive, ref, type Ref } from 'vue'
 import type { KeyProps, MobileAppImageProps, MyWorkProps } from '@/types'
 import { Icon } from '@iconify/vue'
+import { useFadeInOnScroll } from '@/composables/useFadeInOnScroll.ts'
+
+const { imageRefs, observeElementRef } = useFadeInOnScroll()
 
 const myWorkImg: Ref<MyWorkProps[]> = ref([
   {
@@ -91,7 +94,7 @@ const visualDesing = reactive<MobileAppImageProps[]>([
 
 <template>
   <!--  hero section-->
-  <section class="barca-hero-img bg-cover h-screen"></section>
+  <section ref="observeElementRef" class="barca-hero-img bg-cover h-screen"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
       <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-sm lg:text-xl mb-3">Role</h6>
@@ -146,7 +149,7 @@ const visualDesing = reactive<MobileAppImageProps[]>([
     <!--    button hire me-->
 
     <!--    image-->
-    <figure>
+    <figure ref="observeElementRef">
       <img alt="Barca Exam Platform" src="/image/Barca/Barca-Edu-Platform.png" />
     </figure>
     <!--    image-->
@@ -227,7 +230,10 @@ const visualDesing = reactive<MobileAppImageProps[]>([
     </div>
 
     <!--    image-->
-    <section class="flex flex-col lg:flex-row items-center justify-between gap-20 mt-20">
+    <section
+      ref="observeElementRef"
+      class="flex flex-col lg:flex-row items-center justify-between gap-20 mt-20"
+    >
       <figure>
         <img alt="User Research Pie Chart" src="/image/Barca/Barca-Edu-Chart.png" />
       </figure>
@@ -250,7 +256,7 @@ const visualDesing = reactive<MobileAppImageProps[]>([
   <!--  User Search-->
 
   <!-- image edu commit -->
-  <section class="mt-32">
+  <section ref="observeElementRef" class="mt-32">
     <img alt="Braca Edu Commit" src="/image/Barca/Braca-Edu-Commit.png" />
   </section>
   <!-- image edu commit -->
@@ -264,7 +270,7 @@ const visualDesing = reactive<MobileAppImageProps[]>([
         identifying opportunities Barca can leverage to stand out.
       </p>
     </section>
-    <figure>
+    <figure ref="observeElementRef">
       <img alt="Barca Opportunities" src="/image/Barca/Barca-Opportunities.png" />
     </figure>
   </SectionCard>
@@ -280,14 +286,14 @@ const visualDesing = reactive<MobileAppImageProps[]>([
   <!--  USER PERSONAS MAPS-->
 
   <!-- Low Fidelity Wireframe -->
-  <SectionCard>
+  <SectionCard ref="observeElementRef">
     <h4 class="text-4xl font-switzer-md mb-14">Low Fidelity Wireframe</h4>
     <div class="flex flex-col gap-8 lg:flex-row">
       <figure>
-        <img src="/image/Barca/wireframe-one.png" alt="" />
+        <img alt="" src="/image/Barca/wireframe-one.png" />
       </figure>
       <figure>
-        <img src="/image/Barca/wireframe-two.png" alt="" />
+        <img alt="" src="/image/Barca/wireframe-two.png" />
       </figure>
     </div>
   </SectionCard>
@@ -297,12 +303,12 @@ const visualDesing = reactive<MobileAppImageProps[]>([
   <SectionCard>
     <h4 class="text-4xl font-switzer-md mb-14">Visual Design</h4>
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-14">
-      <figure v-for="items in visualDesing" :key="items.id">
-        <img :src="items.image" :alt="items.altText" />
+      <figure v-for="items in visualDesing" :key="items.id" ref="imageRefs">
+        <img :alt="items.altText" :src="items.image" />
       </figure>
     </div>
-    <figure>
-      <img src="/image/Barca/visualDesign-desktop.png" alt="" />
+    <figure ref="observeElementRef">
+      <img alt="" src="/image/Barca/visualDesign-desktop.png" />
     </figure>
   </SectionCard>
   <!-- Visual Design -->
