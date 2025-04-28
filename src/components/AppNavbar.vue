@@ -26,7 +26,7 @@ useIntersectionObserver(
   <section class="max-w-7xl mx-auto py-5 px-5 lg:px-8">
     <div ref="headerRef">
       <header
-        :class="{ 'fixed top-0 left-0 px-8 py-5 w-full z-50 shadow-lg bg-white': isVisible }"
+        :class="{ 'fixed top-0 left-0 px-8 py-5 w-full z-50  bg-white': isVisible }"
         class="flex items-center justify-between"
       >
         <Link to="/">
