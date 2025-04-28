@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { useFadeInOnScroll } from '@/composables/useFadeInOnScroll.ts'
+
+const { imageRefs } = useFadeInOnScroll()
 defineProps<{
   defaultClass?: string
   mainHeader?: string
@@ -12,7 +15,7 @@ defineProps<{
 <template>
   <section :class="['flex justify-between items-center gap-[80px]', defaultClass]">
     <!--    image-->
-    <figure v-if="image">
+    <figure v-if="image" ref="imageRefs">
       <img :alt="imageAlt" :src="image" />
     </figure>
     <!--    image-->
