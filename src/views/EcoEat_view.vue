@@ -1,9 +1,11 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import AppLink from '@/components/AppLink.vue'
 import SectionCard from '@/components/SectionCard.vue'
 import type { MobileAppImageProps, MyWorkProps } from '@/types'
 import { reactive, ref, type Ref } from 'vue'
+import { useFadeInOnScroll } from '@/composables/useFadeInOnScroll.ts'
 
+const { imageRefs, observeElementRef } = useFadeInOnScroll()
 const myWorkImg: Ref<MyWorkProps[]> = ref([
   {
     image: '/image/Astradrop.png',
@@ -57,7 +59,7 @@ const visualDesing = reactive<MobileAppImageProps[]>([
 
 <template>
   <!--  hero section-->
-  <section class="ecoEat-hero-img bg-cover h-screen"></section>
+  <section ref="observeElementRef" class="ecoEat-hero-img bg-cover h-screen"></section>
   <section class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 flex flex-wrap items-center gap-20">
     <div>
       <h6 class="text-[#7D7D7D] font-medium font-switzer-md text-sm lg:text-xl mb-3">Role</h6>
@@ -135,8 +137,8 @@ const visualDesing = reactive<MobileAppImageProps[]>([
     </div>
 
     <!-- image -->
-    <figure>
-      <img src="/image/EcoEat/EcoEat-Product.png" alt="" />
+    <figure ref="observeElementRef">
+      <img alt="" src="/image/EcoEat/EcoEat-Product.png" />
     </figure>
     <!-- image -->
   </SectionCard>
@@ -164,11 +166,11 @@ const visualDesing = reactive<MobileAppImageProps[]>([
       <li>Appreciation for personalized recommendations based on dietary preferences.</li>
     </ul>
 
-    <figure class="mt-14">
+    <figure ref="observeElementRef" class="mt-14">
       <img
-        src="/public/image/EcoEat/EcoEat-Proto-Persona.jpg"
         alt=""
         class="lg:max-w-4xl lg:mx-auto"
+        src="/public/image/EcoEat/EcoEat-Proto-Persona.jpg"
       />
     </figure>
   </SectionCard>
@@ -184,14 +186,14 @@ const visualDesing = reactive<MobileAppImageProps[]>([
     </p>
 
     <section class="flex flex-col gap-4 lg:flex-row lg:gap-8">
-      <figure><img src="/image/EcoEat/wireframe-one.png" alt="" /></figure>
-      <figure>
-        <img src="/image/EcoEat/wireframe-two.png" alt="" />
+      <figure ref="observeElementRef"><img alt="" src="/image/EcoEat/wireframe-one.png" /></figure>
+      <figure ref="observeElementRef">
+        <img alt="" src="/image/EcoEat/wireframe-two.png" />
       </figure>
     </section>
 
-    <figure>
-      <img src="/image/EcoEat/case-study.png" alt="" />
+    <figure ref="observeElementRef">
+      <img alt="" src="/image/EcoEat/case-study.png" />
     </figure>
   </SectionCard>
   <!-- Wireframes -->
@@ -203,8 +205,8 @@ const visualDesing = reactive<MobileAppImageProps[]>([
       <p class="text-[#202020]">Sign In and Sign Up Screen</p>
     </section>
     <div class="flex flex-col gap-8 mb-14">
-      <figure v-for="items in visualDesing" :key="items.id">
-        <img :src="items.image" :alt="items.altText" />
+      <figure v-for="items in visualDesing" :key="items.id" ref="imageRefs">
+        <img :alt="items.altText" :src="items.image" />
       </figure>
     </div>
   </SectionCard>
